@@ -1,0 +1,16 @@
+
+    <!--  --><record id="estate_property_offer_view_action_button" model="ir.actions.act_window">
+
+        <field name="price"></field>
+        <field name="name"></field>
+        
+        <field name="offer_ids">
+            <field name="validity"></field>
+            <field name="date_deadline"></field>
+        </field>
+    </record>
+
+
+                <!-- <header> -->
+                    <!-- <button type="action" name="%(estate_property_offer_view_action_button)d"  string="stat button" /> -->
+                <!-- </header> -->

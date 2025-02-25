@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="estate_model_property_type" model="ir.actions.act_window">
+        <field name="name">Property Types</field>
+        <field name="res_model">estate_property_type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="estate_model_type_view" model="ir.ui.view">
+        <field name="name">Property type</field>
+        <field name="model">estate_property_type</field>
+        <field name="arch" type="xml">
+            <list string="Estate string">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+            </list>
+        </field>
+    </record>
+
+    <record id="event_tag_category_type_view_form" model="ir.ui.view">
+        <field name="name">House</field>
+        <field name="model">estate_property_type</field>
+        <field name="arch" type="xml">
+            <form string="House">
+                <header>
+                    <button type="action"
+                        name="%(estate_property_offer_view_action_button)d"
+                        context="{'search_default_journal_id':id}" />
+                </header>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <notebook>
+                            <page string='Properties'>
+                                <field name="property_ids">
+                                    <list string="House">
+                                        <field name="name" />
+                                        <field name="expected_price" />
+                                        <field name="state" />
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="estate_property_offer_view_action_button" model="ir.actions.act_window">
+        <field name="name">Property offer</field>
+        <field name="res_model">estate_property_type</field>
+        <field name="view_mode">list,pivot,graph,kanban</field>
+    </record>
+
+</odoo>
