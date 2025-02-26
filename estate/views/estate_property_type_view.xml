@@ -13,6 +13,8 @@
             <list string="Estate string">
                 <field name="sequence" widget="handle" />
                 <field name="name" />
+                <field name="offer_count" />
+                <field name="offer_ids" />
             </list>
         </field>
     </record>
@@ -22,12 +24,18 @@
         <field name="model">estate_property_type</field>
         <field name="arch" type="xml">
             <form string="House">
-                <header>
-                    <button type="action"
-                        name="%(estate_property_offer_view_action_button)d"
-                        context="{'search_default_journal_id':id}" />
-                </header>
                 <sheet>
+                    <header>
+                        <button type="action"
+                            class="oe_stat_button"
+                            icon='fa-money'
+                            name="%(estate_property_offer_view_action_button)d"
+                            context="{'search_default_journal_id':id}">
+                            <field name="offer_count">
+                            </field>
+                        </button>
+                    </header>
+
                     <div>
                         <h1>
                             <field name="name" />
@@ -54,8 +62,39 @@
 
     <record id="estate_property_offer_view_action_button" model="ir.actions.act_window">
         <field name="name">Property offer</field>
-        <field name="res_model">estate_property_type</field>
-        <field name="view_mode">list,pivot,graph,kanban</field>
+        <field name="res_model">estate_property_offer</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="estate_model_offer_view_list" model="ir.ui.view">
+        <field name="name">Estate</field>
+        <field name="model">estate_property_offer</field>
+        <field name="arch" type="xml">
+            <list string="offers">
+                <field name="price"></field>
+                <field name="partner_id">
+                </field>
+                <field name="validity"></field>
+                <field name="date_deadline"></field>
+            </list>
+        </field>
     </record>
 
+    <record id="event_tag_category_type_view_form_list" model="ir.ui.view">
+        <field name="name">House</field>
+        <field name="model">estate_property_type</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name='property_ids'>
+                    <list>
+                        <field name="name" />
+                        <field name="expected_price" />
+                        <field name="state" />
+                    </list>
+
+                </field>
+
+            </form>
+        </field>
+
+    </record>
 </odoo>
