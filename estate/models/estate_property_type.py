@@ -12,7 +12,6 @@ class propertyType(models.Model):
     @api.depends('offer_ids')
     def _count_number_of_offers(self):
         for record in self:
-            print(">>>>>>>>>>>>", str(len(record.offer_ids)))
             record.offer_count = len(record.offer_ids)
 
     _sql_constraints = [
