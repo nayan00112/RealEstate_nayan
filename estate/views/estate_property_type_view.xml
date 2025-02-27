@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record id="estate_property_type_rule" model="ir.rule">
-        <field name="name">Estate Details type</field>
-        <field name="model_id" ref='model_estate_property_type'></field>
-        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
-    </record>
-
     <record id="estate_model_property_type" model="ir.actions.act_window">
         <field name="name">Property Types</field>
         <field name="res_model">estate_property_type</field>
@@ -24,12 +18,6 @@
                 <field name="offer_ids" />
             </list>
         </field>
-    </record>
-
-    <record id="estate_property_offer_rule" model="ir.rule">
-        <field name="name">Estate Details type</field>
-        <field name="model_id" ref='model_estate_property_offer'></field>
-        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
     </record>
 
     <record id="estate_property_offer_view_action_button" model="ir.actions.act_window">

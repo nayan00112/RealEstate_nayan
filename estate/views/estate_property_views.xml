@@ -1,23 +1,14 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record id="estate_property_rule" model="ir.rule">
-        <field name="name">Estate Details</field>
-        <field name="model_id" ref='model_estate_property'></field>
-        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
-    </record>
 
     <record id="estate_model_property" model="ir.actions.act_window">
         <field name="name">Estate Details</field>
         <field name="res_model">estate_property</field>
         <field name="view_mode">list,form,kanban</field>
+        <field name="context">{'search_default_available': True, 'search_default_current': True}</field>
     </record>
 
-    <record id="estate_property_tag_rule" model="ir.rule">
-        <field name="name">Estate Details tag</field>
-        <field name="model_id" ref='model_estate_property_tag'></field>
-        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
-    </record>
 
     <record id="estate_model_property_tag" model="ir.actions.act_window">
         <field name="name">Property Tags</field>
@@ -166,10 +157,12 @@
                 <field name="facades"></field>
                 <filter string="Available" name="available"
                     domain="['|', ('state', '=', 'new'), ('state', '=', 'offer_received')]"
+                    
                 />
                 <group expand="1" string="Group By Postcode">
                     <filter string="Postcode" name="postcode" context="{'group_by':'postcode'}" />
                 </group>
+
             </search>
 
         </field>
