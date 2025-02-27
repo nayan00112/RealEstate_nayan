@@ -17,7 +17,7 @@
         'reports/estate_property_report_template.xml',
         'views/estate_menus.xml',
     ],
-     "demo": [
+     "data": [
        'demo/estate_demo.xml',
     ],
     
