@@ -4,4 +4,29 @@
     <record id="estate_property_manager_group" model="res.groups">
         <field name="name">Manager Group</field>
     </record>
+
+    <record id="estate_property_type_tag_access" model="res.groups">
+        <field name="name">Estate Property Tag Type access</field>
+    </record>
+
+    <record id="estate_property_adder_group" model="res.groups">
+        <field name="name">Estate Property Adder Group</field>
+    </record>
+
+
+    <record id="estate_property_all" model="res.groups">
+        <field name="name">Estate property all</field>
+    </record>
+
+    <record id="estate_property_type_all" model="res.groups">
+        <field name="name">Estate property type all</field>
+    </record>
+
+    <record id="estate_property_tag_all" model="res.groups">
+        <field name="name">Estate property tag all</field>
+    </record>
+
+    <record id="estate_property_offer_all" model="res.groups">
+        <field name="name">Estate property offer all</field>
+    </record>
 </odoo>
