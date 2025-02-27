@@ -2,6 +2,10 @@
     'name':'Estate',
     'installable': True,
     'application': True,
+    "depends": [
+        "base",
+        "web",
+    ],
     'data':[ 
         'security/ir.model.access.csv',
         'views/estate_property_views.xml',
@@ -12,5 +16,9 @@
         'reports/estate_property_report_action.xml',
         'reports/estate_property_report_template.xml',
         'views/estate_menus.xml',
-    ]
+    ],
+     "demo": [
+       'demo/estate_demo.xml',
+    ],
+    
 }

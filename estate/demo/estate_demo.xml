@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Property Types -->
+    <record id="property_residential" model="estate_property_type">
+        <field name="name">Residential</field>
+    </record>
+
+    <record id="property_commercial" model="estate_property_type">
+        <field name="name">Commercial</field>
+    </record>
+
+    <record id="property_industrial" model="estate_property_type">
+        <field name="name">Industrial</field>
+    </record>
+
+    <record id="property_land" model="estate_property_type">
+        <field name="name">Land</field>
+    </record>
+
+    <!-- Properties -->
+
+
+    <record id="trailer" model="estate_property">
+        <field name="name">Trailer Home</field>
+
+        <field name="description">Home in a trailer park</field>
+        <field name="postcode">54321</field>
+        <field name="date_availability">1970-01-01</field>
+        <field name="expected_price">100000</field>
+        <field name="selling_price">120000</field>
+        <field name="bedrooms">1</field>
+        <field name="living_area">10</field>
+        <field name="facades">4</field>
+        <field name="garage">False</field>
+        <field name="garden">True</field>
+
+    </record>
+
+    <record id="space_ship" model="estate_property">
+        <field name="name">International Space Station</field>
+        <field name="state">new</field>
+        <field name="description">Aliens sometimes come visit</field>
+        <field name="postcode">----</field>
+        <field name="date_availability">2030-12-31</field>
+        <field name="expected_price">45890000</field>
+
+    </record>
+
+    <record id="cabin" model="estate_property">
+        <field name="name">Cozy Cabin</field>
+        <field name="state">sold</field>
+        <field name="description">Small cabin by lake</field>
+        <field name="postcode">10000</field>
+        <field name="date_availability">2020-01-01</field>
+        <field name="expected_price">80000</field>
+        <field name="bedrooms">1</field>
+        <field name="living_area">10</field>
+        <field name="facades">4</field>
+        <field name="garage">False</field>
+        <field name="garden">True</field>
+
+    </record>
+
+ 
+</odoo>
