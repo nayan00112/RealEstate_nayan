@@ -34,6 +34,8 @@ class Property(models.Model):
     offer_ids = fields.One2many("estate_property_offer", "property_id", string="Offer ids")
     total_area = fields.Float(compute="_total_area")
     best_price = fields.Float(compute='_best_price', default=0, store=True)
+    
+    company_id=fields.Many2one('res.company', string='Company', required=True, index=True, default=lambda self: self.env.company)
 
     @api.depends('living_area', 'garden_area')
     def _total_area(self):

@@ -8,6 +8,9 @@ class propertyType(models.Model):
     sequence = fields.Integer('Sequence')
     offer_ids = fields.One2many('estate_property_offer', 'property_type_id')
     offer_count = fields.Integer(compute='_count_number_of_offers')
+    
+    company_id=fields.Many2one('res.company', string='Company', required=True, index=True, default=lambda self: self.env.company)
+    
 
     @api.depends('offer_ids')
     def _count_number_of_offers(self):
