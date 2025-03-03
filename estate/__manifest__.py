@@ -22,5 +22,5 @@
     # "demo": [
     #    'deta/estate_demo.xml',
     # ],
-    
+   
 }

@@ -63,7 +63,11 @@ class Property(models.Model):
     def action_estate_property_sold(self):
         for record in self:
             if record.state != 'cancelled':
-                record.state = 'sold'
+                print(record.state)
+                if record.state == 'offer_accepted':
+                    record.state = 'sold'
+                else:
+                    raise exceptions.UserError('No offer accepted yet!')
             else:
                 raise exceptions.UserError('Cancelled property cannot be sold!')
             

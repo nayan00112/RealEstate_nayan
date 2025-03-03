@@ -39,12 +39,12 @@ class propertyOffer(models.Model):
         for record in self:
             if record.status != 'refused':
                     
-                    # CANNOT WORK!
                     
                 # if record.property_id.seller:
                 #     raise exceptions.UserError('allrady accepted!')
                 # else:
                     record.status = 'accepted'
+                    record.property_id.state = 'offer_accepted'
                     record.property_id.selling_price = record.price
                     record.property_id.buyers = record.partner_id
             else:
